@@ -16,6 +16,7 @@ def shift_character(character, shift):
     else:
         return character
 
+print(shift_character("5", 3))
 print(shift_character("z", 1))
 print("[", shift_character(" ", 5), "]", sep="")
 print(shift_character("!", 3))

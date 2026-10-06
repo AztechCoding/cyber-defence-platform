@@ -1,9 +1,16 @@
-letter = "K"
-lower = letter.lower()
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+character = "5"
 
-if lower in "abcdefghijklmnopqrstuvwxyz":
-    print("Found a letter")
+if character in ALPHABET:
+    print("Character is in the alphabet")
+elif character in "0123456789":
+    print("Character is a number")
 else:
-    print("Not in our alphabet")
+    print("Character is not in the alphabet or a number")
 
-print(letter.isupper())
+shift = 3
+
+if shift == 5:
+    print("Shift is 3")
+else:
+    print("Shift is not 3")
