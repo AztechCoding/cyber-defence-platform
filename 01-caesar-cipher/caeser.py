@@ -22,6 +22,16 @@ def shift_text(text, shift):
         result += shift_character(character, shift)
     return result
 
+def encrypt(text, shift):
+    return shift_text(text, shift)
+
+def decrypt(text, shift):
+    return shift_text(text, -shift)
+
+secret = encrypt("Caeser Test!!", 5)
+
+print(decrypt(secret, 5))
+print(secret)
 print(shift_text("Hi!", 1))
 print(shift_text("abc", 1))
 print(shift_character("5", 3))
