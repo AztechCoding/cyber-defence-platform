@@ -16,6 +16,14 @@ def shift_character(character, shift):
     else:
         return character
 
+def shift_text(text, shift):
+    result = ""
+    for character in text:
+        result += shift_character(character, shift)
+    return result
+
+print(shift_text("Hi!", 1))
+print(shift_text("abc", 1))
 print(shift_character("5", 3))
 print(shift_character("z", 1))
 print("[", shift_character(" ", 5), "]", sep="")
