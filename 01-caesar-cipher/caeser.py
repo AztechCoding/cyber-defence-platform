@@ -30,6 +30,15 @@ def decrypt(text, shift):
 
 secret = encrypt("Caeser Test!!", 5)
 
+def count_letters(text):
+    counts = {}
+    for character in text.lower():
+        if character in ALPHABET:
+            counts[character] = counts.get(character, 0) + 1
+    return counts
+
+print(count_letters("Hello, World!"))
+print(count_letters("Aa!"))
 print(decrypt(secret, 5))
 print(secret)
 print(shift_text("Hi!", 1))
