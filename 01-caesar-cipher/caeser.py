@@ -37,6 +37,26 @@ def count_letters(text):
             counts[character] = counts.get(character, 0) + 1
     return counts
 
+def crack(ciphertext):
+    counts = count_letters(ciphertext)
+    if not counts:
+        return None, ciphertext
+    most_common = ""
+    highest = 0
+    for letter in counts:
+        if counts[letter] > highest:
+            highest = counts[letter]
+            most_common = letter
+    shift = (ALPHABET.find(most_common) - ALPHABET.find("e")) % 26
+    return shift, decrypt(ciphertext, shift)
+
+message = "We see three green trees. These trees seem evergreen."
+ciphertext = encrypt(message, 7)
+             
+
+print(crack("123!"))
+print(crack(encrypt("aaa", 7)))
+print(crack(ciphertext))
 print(count_letters("Hello, World!"))
 print(count_letters("Aa!"))
 print(decrypt(secret, 5))
