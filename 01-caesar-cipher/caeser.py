@@ -50,10 +50,11 @@ def crack(ciphertext):
     shift = (ALPHABET.find(most_common) - ALPHABET.find("e")) % 26
     return shift, decrypt(ciphertext, shift)
 
+sentence_counts = count_letters("we see trees.")
 message = "We see three green trees. These trees seem evergreen."
 ciphertext = encrypt(message, 7)
              
-
+print(sentence_counts.get("e", 0))
 print(crack("123!"))
 print(crack(encrypt("aaa", 7)))
 print(crack(ciphertext))
